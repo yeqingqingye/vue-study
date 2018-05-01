@@ -1,0 +1,23 @@
+{
+  "name": "vue-study",
+  "version": "1.0.0",
+  "description": "这是一个vue demo",
+  "main": "index.js",
+  "dependencies": {
+    "vue": "^2.5.16"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yeqingqingye/vue-study.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yeqingqingye/vue-study/issues"
+  },
+  "homepage": "https://github.com/yeqingqingye/vue-study#readme"
+}
