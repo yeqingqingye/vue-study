@@ -4,6 +4,7 @@
   "description": "这是一个vue demo",
   "main": "index.js",
   "dependencies": {
+    "bootstrap": "^4.1.1",
     "vue": "^2.5.16"
   },
   "devDependencies": {},
