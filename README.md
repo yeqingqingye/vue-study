@@ -35,7 +35,7 @@
 - view-model 视图模型
 
 ## vue中属性用的是Object.defineProperty(es5)的没有替代方案
--不支持<=ie8
+- 不支持<=ie8
 
 ## 安装vue
 - cdn的方式: <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>

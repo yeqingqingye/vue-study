@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <input type="text" v-model="cc"> {{cc}}
+    <input type="text" v-model.lazy="cc"> {{cc}}
+    <input type="text" v-model.number="cc"> {{cc}}
+    <input type="text" v-model.trim="cc"> {{cc}}
+
+    <br/>
+
+    <textarea name="" id="" cols="30" rows="10" v-model="dd">12</textarea>
+
+    <br/>
+
+    <input type="checkbox" v-model="a"> {{a}}
+
+    <br/>
+
+    <input type="checkbox" v-model="b" value="1">
+    <input type="checkbox" v-model="b" value="2">
+    <input type="checkbox" v-model="b" value="3">
+
+    {{b}}
+
+    <br>
+
+    <input type="radio" value="1" v-model="ee">男
+    <input type="radio" value="2" v-model="ee">女
+    {{ee}}
+
+    <br/>
+
+    <select name="" id="select" v-model="ff">
+        <option value="" disabled>请选择</option>
+        <option value="1">西瓜</option>
+        <option value="2">香蕉</option>
+        <option value="3">苹果</option>
+    </select>
+    {{ff}}
+
+</div>
+
+<script type="text/javascript">
+
+    //v-model 会忽略所有表单元素的 value、checked、selected 特性的初始值而总是将 Vue 实例的数据作为数据来源。你应该通过 JavaScript 在组件的 data 选项中声明初始值。
+    //如果是输入框text类型或者是textarea的 v-model==>就是输入的值
+    //如果是单个的checkbox 选中 v-model==>true 不选中 v-model==>false
+    //如果是多个checkbox v-model==>[] 选中的哪一个值就是把选中的value插入到数组中 如果选中的value为空 择选中的值是null
+    //如果是radio v-model等于选中的那个radio的value值
+    //如果是select v-model既可以绑定一个字符串也可以绑定一个数组
+
+    //v-model监听的是input事件发生变化也跟着变化    v-model.lazy就是监听change事件发生变化才跟着变化
+    //v-model.number 总是把用户的输入值转成数值类型
+    //v-model.trim 去除首位空格
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            cc: '123',
+            dd: '',
+            a: '',
+            b: [],
+            ee: '',
+            ff: ''
+        }
+    })
+
+</script>
+
+</body>
+</html>
