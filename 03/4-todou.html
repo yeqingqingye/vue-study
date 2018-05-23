@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="../node_modules/axios/dist/axios.js"></script>
+    <!--<link type="text/css" rel="stylesheet" href="css/bootstrap.css"> -->
+</head>
+<body>
+
+<div id="app">
+
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">
+                    <span class="h3 text-danger">ToDouList</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="col-md-12">
+            <div class="panel panel-default">
+                <div class="panel-heading text-center">
+                    <h1 class="panel-title h2">你一共还有几件 {{total}} 事情没有完成</h1>
+                    <input type="text" class="form-control" @keyup.13="addVal(val)" v-model="val">
+                </div>
+                <div class="panel-body">
+                    <ul class="list-group">
+                        <li class="list-group-item" v-for="item in list">
+                            <input type="checkbox" v-model="item.isChecked">
+                            <span>{{item.val}}</span>
+                            <button class="pull-right btn-xs btn-danger" @click="deleteCur(item)">&xotime;</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script type="text/javascript">
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            list: [
+                {
+                    isChecked: false,
+                    val: '吃饭'
+                },
+                {
+                    isChecked: false,
+                    val: '睡觉'
+                },
+                {
+                    isChecked: false,
+                    val: '打豆豆'
+                }
+            ],
+            val: ''
+        },
+        created() {
+            this.list = sessionStorage._saveInfo ? JSON.parse(sessionStorage._saveInfo) : this.list;
+        },
+        computed: {
+            total() {
+                return this.list.filter(item => !item.isChecked).length;
+            }
+        },
+        methods: {
+            addVal(val) {
+                if (!val) return;
+                this.list.push({isChecked: Math.random() > 0.5 ? true : false, val: this.val});
+                sessionStorage._saveInfo = JSON.stringify(this.list);
+                this.val = '';
+            },
+            deleteCur(val) {
+                this.list = this.list.filter(item => item !== val);
+                sessionStorage._saveInfo = JSON.stringify(this.list);
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>

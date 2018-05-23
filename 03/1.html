@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../node_modules/axios/dist/axios.js"></script>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <style>
+        thead tr th {
+            text-align: center !important;
+        }
+
+        tbody tr td {
+            text-align: center;
+            vertical-align: middle !important;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+    <div class="container">
+        <div class="row">
+            <table class="table table-hover" width="100%" cellpadding="0" cellspacing="0" border="0">
+                <caption>基本信息</caption>
+                <thead>
+
+                </thead>
+                <tr>
+                    <th>全选 <input type="checkbox" placeholder=""></th>
+                    <th>商品</th>
+                    <th>单价</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                    <th>操作</th>
+                </tr>
+                <!--
+                <tbody>
+                <tr v-for="(item,index) in arr">
+                    <td><input type="checkbox" placeholder=""></td>
+                    <td>
+                        <img :src="item.bookPic" :titel="item.bookDesc">
+                        <span>{{item.bookDesc}}</span>
+                    </td>
+                    <td>{{item.bookPrice}}</td>
+                    <td><input type="text" placeholder="" class="form-control"></td>
+                    <td>{{singleOne}}</td>
+                    <td>
+                        <button class="btn btn-danger">删除</button>
+                    </td>
+                </tr>
+                </tbody>-->
+            </table>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            arr: [],
+            num: ''
+        },
+        computed: {
+            singleOne() {
+                return 4
+            }
+        },
+        mounted() {
+            this.getData();
+        },
+        methods: {
+            getData() {
+                axios.get('../book-data.json').then((res) => {
+                    this.arr = res.data.data;
+                }, (err) => {
+                    console.log(err);
+                });
+            }
+        }
+    });
+
+
+</script>
+
+</body>
+</html>

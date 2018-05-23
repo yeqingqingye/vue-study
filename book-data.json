@@ -1,0 +1,25 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "isSelected": true,
+      "bookPic": "https://img10.360buyimg.com/cms/s80x80_jfs/t7789/332/3001069405/143144/3b03d023/59b78460Nf7374225.jpg",
+      "bookDesc": "太力真空压缩袋旅行收纳袋特大号真空袋整理袋11件套含手泵1",
+      "bookPrice": "39.90"
+    },
+    {
+      "id": 2,
+      "isSelected": true,
+      "bookPic": "https://img10.360buyimg.com/cms/s80x80_jfs/t7789/332/3001069405/143144/3b03d023/59b78460Nf7374225.jpg",
+      "bookDesc": "太力真空压缩袋旅行收纳袋特大号真空袋整理袋11件套含手泵2",
+      "bookPrice": "39.90"
+    },
+    {
+      "id": 3,
+      "isSelected": true,
+      "bookPic": "https://img10.360buyimg.com/cms/s80x80_jfs/t7789/332/3001069405/143144/3b03d023/59b78460Nf7374225.jpg",
+      "bookDesc": "太力真空压缩袋旅行收纳袋特大号真空袋整理袋11件套含手泵3",
+      "bookPrice": "39.90"
+    }
+  ]
+}

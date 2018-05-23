@@ -2,12 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9bc4524-616c-4617-915f-d52f43cee7d0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/01/pcREM.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02/1-checkbox.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/02/1.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03/1.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03/2-class-style.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03/3-v-for.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03/4-todou.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03/readme.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/book-data.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/01/todou.html" beforeDir="false" afterPath="$PROJECT_DIR$/01/todou.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,12 +23,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file leaf-file-name="1-checkbox.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/02/1-checkbox.html">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="4-todou.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/03/4-todou.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1135">
-              <caret line="6" column="68" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
+            <state relative-caret-position="-269">
+              <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+              <folding>
+                <element signature="e#1341#1349#1" expanded="true" />
+                <element signature="e#1654#1773#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/03/readme.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="396">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
             </state>
           </provider>
         </entry>
@@ -39,6 +55,12 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>number</find>
+      <find>val</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -51,6 +73,16 @@
         <option value="$PROJECT_DIR$/01/todou.html" />
         <option value="$PROJECT_DIR$/02/1.md" />
         <option value="$PROJECT_DIR$/02/1-checkbox.html" />
+        <option value="$PROJECT_DIR$/03.html" />
+        <option value="$PROJECT_DIR$/book-data.json.html" />
+        <option value="$PROJECT_DIR$/1.json" />
+        <option value="$PROJECT_DIR$/03/1.html" />
+        <option value="$PROJECT_DIR$/03/2.html" />
+        <option value="$PROJECT_DIR$/03/2-class-style.html" />
+        <option value="$PROJECT_DIR$/03/3-v-for.html" />
+        <option value="$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/03/readme.md" />
+        <option value="$PROJECT_DIR$/03/4-todou.html" />
       </list>
     </option>
   </component>
@@ -75,10 +107,9 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1378" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1377" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -95,11 +126,6 @@
               <item name="vue-study" type="b2602c69:ProjectViewProjectNode" />
               <item name="vue-study" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="vue-study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue-study" type="462c0819:PsiDirectoryNode" />
-              <item name="02" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -112,7 +138,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="JavaScriptWeakerCompletionTypeGuess" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="E:/web/mingan-app-frontend" />
     <property name="node.js.detected.package.prettier" value="true" />
     <property name="node.js.path.for.package.prettier" value="project" />
     <property name="node.js.selected.package.prettier" value="" />
@@ -154,18 +180,32 @@
       <workItem from="1525244957844" duration="1368000" />
       <workItem from="1525249437085" duration="2202000" />
       <workItem from="1525309606894" duration="1148000" />
-      <workItem from="1525396571108" duration="2859000" />
+      <workItem from="1525396571108" duration="4463000" />
+      <workItem from="1525432155016" duration="29000" />
+      <workItem from="1525432224859" duration="25000" />
+      <workItem from="1525612847673" duration="3996000" />
+      <workItem from="1525656033492" duration="1033000" />
+      <workItem from="1526880993207" duration="2611000" />
+      <workItem from="1526886520628" duration="630000" />
+      <workItem from="1526887755415" duration="985000" />
+      <workItem from="1526889769352" duration="1953000" />
+      <workItem from="1526968166059" duration="2438000" />
+      <workItem from="1526971384423" duration="1671000" />
+      <workItem from="1526975057810" duration="899000" />
+      <workItem from="1526976819214" duration="7105000" />
+      <workItem from="1527038948322" duration="2569000" />
+      <workItem from="1527041589370" duration="4458000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="21558000" />
+    <option name="totallyTimeSpent" value="53564000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12298682" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12298682" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -192,31 +232,126 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/03/4-todou.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="726">
+          <caret line="33" column="10" selection-start-line="33" selection-start-column="10" selection-end-line="33" selection-end-column="10" />
+          <folding>
+            <element signature="e#1341#1349#1" expanded="true" />
+            <element signature="e#1654#1773#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/3-v-for.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1562">
+          <caret line="71" column="13" lean-forward="true" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/2-class-style.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1386">
+          <caret line="63" column="16" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="242">
+          <caret line="11" column="97" selection-start-line="11" selection-start-column="97" selection-end-line="11" selection-end-column="97" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/3-v-for.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="15" column="6" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/2-class-style.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="660">
+          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/2-class-style.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="946">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/2-class-style.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="990">
+          <caret line="45" column="26" lean-forward="true" selection-start-line="45" selection-start-column="26" selection-end-line="45" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1012">
+          <caret line="46" column="24" selection-start-line="46" selection-start-column="24" selection-end-line="46" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/book-data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="10" column="14" lean-forward="true" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/02/1-checkbox.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/01/todou.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="418">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="462">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/01/1.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="60" column="6" lean-forward="true" selection-start-line="60" selection-start-column="6" selection-end-line="60" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -227,17 +362,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/01/todou.html">
+    <entry file="file://$PROJECT_DIR$/node_modules/vue/dist/vue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="451">
-          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        <state relative-caret-position="213">
+          <caret line="6713" column="12" selection-start-line="6713" selection-start-column="6" selection-end-line="6713" selection-end-column="12" />
         </state>
       </provider>
     </entry>
@@ -248,20 +376,99 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/vue/dist/vue.js">
+    <entry file="file://$PROJECT_DIR$/01/todou.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="6713" column="12" selection-start-line="6713" selection-start-column="6" selection-end-line="6713" selection-end-column="12" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+        <state relative-caret-position="-35">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03.html" />
+    <entry file="file://$PROJECT_DIR$/book-data.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/01/1.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="88">
+          <caret line="4" column="38" selection-start-line="4" selection-start-column="38" selection-end-line="4" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1078">
+          <caret line="49" lean-forward="true" selection-start-line="49" selection-end-line="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-519">
+          <caret line="18" column="7" lean-forward="true" selection-start-line="18" selection-start-column="7" selection-end-line="18" selection-end-column="7" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/02/1-checkbox.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1135">
-          <caret line="6" column="68" selection-start-line="6" selection-start-column="68" selection-end-line="6" selection-end-column="68" />
+        <state relative-caret-position="176">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/2-class-style.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="99">
+          <caret line="63" column="16" selection-start-line="63" selection-start-column="13" selection-end-line="63" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/3-v-for.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="71" column="13" selection-start-line="71" selection-start-column="13" selection-end-line="71" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/scss/_navbar.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="361">
+          <caret line="259" column="13" selection-start-line="259" selection-start-column="5" selection-end-line="259" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="158620">
+          <caret line="7210" column="45" selection-start-line="7210" selection-start-column="45" selection-end-line="7210" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/4-todou.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-269">
+          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding>
+            <element signature="e#1341#1349#1" expanded="true" />
+            <element signature="e#1654#1773#0" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../node_modules/axios/dist/axios.js"></script>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <style>
+        p {
+            width: 100px;
+            height: 100px;
+            background: red;
+            text-align: center;
+            line-height: 100px;
+            margin: 50px auto 0;
+            border-radius: 4px;
+        }
+
+        .aa {
+            font-size: 20px;
+        }
+
+        .bb {
+            background: #ededed;
+        }
+
+        .cc {
+            color: red;
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="app">
+
+    <p class="aa" :class="bb">{{msg | increase('h','s')}}</p>
+    <p class="aa" :class="{active1:'isActive',active2:'isActive',active3:'isActive'}">{{msg}}</p>
+    <p class="aa" :class="cc">{{ee}}</p>
+    <p class="aa" :class="[xx,yy]">{{ee}}</p>
+
+    <span v-if="MM">1234</span>
+    <span v-else-if="isActive">5678</span>
+    <span v-else>7890</span>
+    <button @click="MM=!MM,total=true">点我啊</button>
+
+    <div class="test">
+        <template v-if="zz">
+            <ul>
+                <li v-for="(item,index) in title" @click="changeTwo(index,item)" v-if="zz">{{item}}</li>
+            </ul>
+        </template>
+    </div>
+
+    <span @click="changeTwo" :class="hh">我好帅啊</span>
+
+
+    <div class="test-3">
+        <ul>
+            <li v-for="(item,index) in title" @click="changeTwo(index,item)" v-if="total">{{item}}</li>
+        </ul>
+        <p>{{val}}</p>
+        <span>{{total}}</span>
+    </div>
+
+</div>
+
+<script type="text/javascript">
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: 'yeqing',
+            bb: 'bb',
+            isActive: true,
+            MM: true,
+            xx: 'x',
+            yy: 'y',
+            zz: true,
+            hh: '',
+            title: ['wo', 'hao', 'shuai', 'a'],
+            val: '你快拔出去',
+            total: ''
+        },
+        mounted() {
+            console.log('vue实例刚刚创建完成');
+        },
+        methods: {
+            changeTwo(index, val) {
+                this.val = val;
+            }
+        },
+        watch: {
+            val(newVal, oldVal) {
+                vm.total = newVal + oldVal
+            }
+        },
+        //计算属性
+        computed: {
+            cc() {
+                return {
+                    cc: true,
+                    dd: this.isActive
+                }
+            },
+            ee() {
+                return 'this is text'
+            }
+        },
+        //过滤器
+        filters: {
+            increase(input, a, b) {
+                return input + a + b
+            }
+        }
+    });
+
+    //let cc = (a, b) => a + b;
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <div class="test-1">
+        <ul>
+            <li v-for="(item,index) in list" @click="clickOne(item,index)">{{item}}</li>
+        </ul>
+        <ul>
+            <li v-for="(item1,key,input) in obj">{{item1}} {{key}} {{input}}</li>
+        </ul>
+    </div>
+
+    <div class="login">
+        <template v-if="show">
+            <label for="name">用户名：</label>
+            <input type="text" id="name" v-model="val">
+        </template>
+        <template v-else>
+            <label for="password">密码</label>
+            <input type="text" id="password">
+        </template>
+    </div>
+
+    <button @click="clickMe">点我啊</button>
+
+    <p>{{val}}</p>
+
+    <div class="test-3">
+        <ul>
+            <li v-for="item in newTest3Arr">{{item}}</li>
+        </ul>
+    </div>
+
+</div>
+
+<script>
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            list: ['求', '你', '快', '拔', '去'],
+            obj: {name1: 'Y', name2: 'Q'},
+            show: false,
+            val: '',
+            test3Arr: [1, 2, 3, 4, 5]
+        },
+        computed: {
+            newTest3Arr() {
+                return this.test3Arr.filter(function (item, index) {
+                    return item % 2 === 0
+                });
+            }
+        },
+        methods: {
+            clickOne: function (val, index, input) {
+                console.log(val, index, input);
+            },
+            clickMe() {
+                this.list.push('啊');
+                this.val = new Date().getTime();
+                this.list = this.list.filter(function (item, index) {
+                    return index > 2
+                });
+            }
+        },
+        watch: {
+            list(newVal, oldVal) {
+                //console.log(newVal, oldVal);
+            },
+            val(newVal, oldVal) {
+                console.log(newVal, oldVal);
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
