@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <my-button v-for="(item,index) in 3" :key="index" :title="msg+' '+index"></my-button>
+</div>
+
+<script type="text/javascript">
+
+    //注册一个全局组件
+    Vue.component('my-button', {
+        props: ['title'],
+        data() {
+            return {
+                times: 0
+            }
+        },
+        methods: {
+            showMsg() {
+                this.times += 1
+            }
+        },
+        template: '<p @click="showMsg">{{times}} {{title}}</p>'
+    });
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '这是父组件信息',
+        }
+    });
+
+
+</script>
+
+</body>
+</html>

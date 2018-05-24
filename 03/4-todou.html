@@ -6,7 +6,14 @@
     <link type="text/css" rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
     <script type="text/javascript" src="../node_modules/axios/dist/axios.js"></script>
-    <!--<link type="text/css" rel="stylesheet" href="css/bootstrap.css"> -->
+
+    <style>
+        .active {
+            text-decoration: line-through;
+            color: #cccccc;
+        }
+    </style>
+
 </head>
 <body>
 
@@ -31,9 +38,15 @@
                 </div>
                 <div class="panel-body">
                     <ul class="list-group">
-                        <li class="list-group-item" v-for="item in list">
-                            <input type="checkbox" v-model="item.isChecked">
-                            <span>{{item.val}}</span>
+                        <!--判断是否相等：就是你循环的item和你的当前点击的item是否相等 如果相等 则是当前点击的那一项-->
+                        <li class="list-group-item" v-for="(item,index) in list" @click="show(item,index)">
+                            <span :class="{['active'+index]:curIndex==index,'active':curIndex==index}"
+                                  v-show="curIndex!==index">
+                                <input type="checkbox" v-model="item.isChecked">
+                                <span>{{item.val}}</span>
+                            </span>
+                            <input type="text" class="" v-show="curIndex===index" v-model="cc"
+                                   @keyup.13="add(cc,index,item)" v-focus="curIndex===index" @blur="cancel">
                             <button class="pull-right btn-xs btn-danger" @click="deleteCur(item)">&xotime;</button>
                         </li>
                     </ul>
@@ -42,7 +55,6 @@
         </div>
     </div>
 </div>
-
 
 <script type="text/javascript">
 
@@ -63,7 +75,21 @@
                     val: '打豆豆'
                 }
             ],
-            val: ''
+            val: '',
+            curItem: null,
+            curIndex: null,
+            cc: '',
+            flag: true
+        },
+        directives: {
+            focus(el) {
+                el.focus();
+            }
+        },
+        watch: {
+            list() {
+                sessionStorage._saveInfo = JSON.stringify(this.list);
+            }
         },
         created() {
             this.list = sessionStorage._saveInfo ? JSON.parse(sessionStorage._saveInfo) : this.list;
@@ -74,15 +100,25 @@
             }
         },
         methods: {
+            cancel() {
+                this.curIndex = null;
+            },
+            add(changeVal, index, item) {
+                vm.$set(this.list, index, {isChecked: item.isChecked, val: changeVal});
+                this.curIndex = null;
+            },
+            show(curItem, curIndex) {
+                this.curItem = curItem;
+                this.curIndex = curIndex;
+                this.cc = curItem.val;
+            },
             addVal(val) {
                 if (!val) return;
                 this.list.push({isChecked: Math.random() > 0.5 ? true : false, val: this.val});
-                sessionStorage._saveInfo = JSON.stringify(this.list);
                 this.val = '';
             },
             deleteCur(val) {
                 this.list = this.list.filter(item => item !== val);
-                sessionStorage._saveInfo = JSON.stringify(this.list);
             }
         }
     });
