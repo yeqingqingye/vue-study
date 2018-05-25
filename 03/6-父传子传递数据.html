@@ -8,13 +8,14 @@
 <body>
 
 <div id="app">
-    <my-button v-for="(item,index) in 3" :key="index"></my-button>
+    <my-button v-for="(item,index) in 3" :key="index" :title="msg+' '+index"></my-button>
 </div>
 
 <script type="text/javascript">
 
     //注册一个全局组件
     Vue.component('my-button', {
+        props: ['title'],
         data() {
             return {
                 times: 0
@@ -25,7 +26,7 @@
                 this.times += 1
             }
         },
-        template: '<p @click="showMsg">{{times}}</p>'
+        template: '<p @click="showMsg">{{times}} {{title}}</p>'
     });
 
     let vm = new Vue({

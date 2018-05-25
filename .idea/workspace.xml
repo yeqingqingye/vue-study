@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9bc4524-616c-4617-915f-d52f43cee7d0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/03/5-组件基础.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03/6-父传子传递数据.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03/4-todou.html" beforeDir="false" afterPath="$PROJECT_DIR$/03/4-todou.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03/5-组件基础.html" beforeDir="false" afterPath="$PROJECT_DIR$/03/5-组件基础.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/03/readme.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -17,15 +18,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="4-todou.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/03/4-todou.html">
+    <leaf>
+      <file leaf-file-name="6-父传子传递数据.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/03/6-父传子传递数据.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
-              <folding>
-                <element signature="e#1782#2112#0" />
-              </folding>
+            <state relative-caret-position="537">
+              <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="readme.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/03/readme.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="437">
+              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
             </state>
           </provider>
         </entry>
@@ -66,9 +73,10 @@
         <option value="$PROJECT_DIR$/03/2-class-style.html" />
         <option value="$PROJECT_DIR$/03/3-v-for.html" />
         <option value="$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/03/readme.md" />
-        <option value="$PROJECT_DIR$/03/5-组件基础.html" />
         <option value="$PROJECT_DIR$/03/4-todou.html" />
+        <option value="$PROJECT_DIR$/03/5-组件基础.html" />
+        <option value="$PROJECT_DIR$/03/6-父传子传递数据.html" />
+        <option value="$PROJECT_DIR$/03/readme.md" />
       </list>
     </option>
   </component>
@@ -139,6 +147,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\owner\vue-study\03" />
       <recent name="E:\vue-study" />
     </key>
   </component>
@@ -187,18 +196,19 @@
       <workItem from="1527038948322" duration="2569000" />
       <workItem from="1527041589370" duration="4839000" />
       <workItem from="1527054398622" duration="4599000" />
-      <workItem from="1527140113984" duration="6438000" />
+      <workItem from="1527140113984" duration="6811000" />
+      <workItem from="1527218297543" duration="2105000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64982000" />
+    <option name="totallyTimeSpent" value="67460000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.12298682" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12298682" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -217,26 +227,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
     </layout>
-    <layout-to-restore>
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="NativeScript" order="9" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.12298682" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="right" id="Commander" order="0" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Terminal" order="8" />
-      <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="10" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info id="Favorites" order="2" side_tool="true" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -470,27 +460,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/03/readme.md">
+    <entry file="file://$PROJECT_DIR$/03/4-todou.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        <state relative-caret-position="625">
+          <caret line="118" column="14" lean-forward="true" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/03/5-组件基础.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
+        <state relative-caret-position="484">
+          <caret line="25" column="13" lean-forward="true" selection-start-line="25" selection-start-column="13" selection-end-line="25" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/03/4-todou.html">
+    <entry file="file://$PROJECT_DIR$/03/6-父传子传递数据.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="103" column="31" selection-start-line="103" selection-start-column="31" selection-end-line="103" selection-end-column="31" />
-          <folding>
-            <element signature="e#1782#2112#0" />
-          </folding>
+        <state relative-caret-position="537">
+          <caret line="39" column="9" lean-forward="true" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/readme.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
