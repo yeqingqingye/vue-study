@@ -8,14 +8,15 @@
 <body>
 
 <div id="app">
-    <my-button v-for="(item,index) in 3" :key="index" :title="msg+' '+index"></my-button>
+    <span @click="alert(1234)">1234</span>
+    <my-button v-for="(item,index) in 3" :key="index" :title="msg+' '+index" :btn="btn+index"></my-button>
 </div>
 
 <script type="text/javascript">
 
     //注册一个全局组件
     Vue.component('my-button', {
-        props: ['title'],
+        props: ['title', 'btn'],
         data() {
             return {
                 times: 0
@@ -26,16 +27,18 @@
                 this.times += 1
             }
         },
-        template: '<p @click="showMsg">{{times}} {{title}}</p>'
+        template: '<p @click="showMsg">{{times}} {{title}} {{btn}}</p>'
     });
+
+    //父组件通过绑定自定义属性来向子组件传递 子组件通过props来接收
 
     let vm = new Vue({
         el: '#app',
         data: {
             msg: '这是父组件信息',
+            btn: '这是父组件按钮',
         }
     });
-
 
 </script>
 

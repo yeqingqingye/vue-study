@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    {{times}}
+
+    <my-component :parent-msg="msg" @spot="cc"></my-component>
+
+</div>
+
+<script type="text/javascript">
+
+    //父组件直接用 v-on 来监听子组件触发的事件，需跟子组件中的$emit组合使用。
+
+    Vue.component('my-component', {
+        props: ['parentMsg'],
+        data() {
+            return {
+                childMsg: '这是子组件的数据',
+            }
+        },
+        methods: {
+            cc() {
+                //this.$emit(事件名称，参数);
+                this.$emit('spot', this.childMsg);
+            }
+        },
+        template: '<span @click="cc">{{parentMsg}}</span>'
+    });
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            times: '',
+            msg: {name: '这是父组件的数据'},
+        },
+        methods: {
+            cc(data) {
+                this.times = data;
+            }
+        }
+    });
+
+
+</script>
+
+</body>
+</html>

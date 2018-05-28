@@ -8,16 +8,20 @@
     <script type="text/javascript" src="../node_modules/axios/dist/axios.js"></script>
 
     <style>
-        .active {
+        .list-group .active {
             text-decoration: line-through;
             color: #cccccc;
+        }
+
+        [v-cloak] {
+            display: none;
         }
     </style>
 
 </head>
 <body>
 
-<div id="app">
+<div id="app" v-cloak>
 
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -37,9 +41,9 @@
                     <input type="text" class="form-control" @keyup.13="addVal(val)" v-model="val">
                 </div>
                 <div class="panel-body">
-                    <ul class="list-group">
+                    <ul class="list-group" v-show="showDoThingList.length>0">
                         <!--判断是否相等：就是你循环的item和你的当前点击的item是否相等 如果相等 则是当前点击的那一项-->
-                        <li class="list-group-item" v-for="(item,index) in list" @click="show(item,index)">
+                        <li class="list-group-item" v-for="(item,index) in showDoThingList" @click="show(item,index)">
                             <span :class="{['active'+index]:curIndex==index,'active':curIndex==index}"
                                   v-show="curIndex!==index">
                                 <input type="checkbox" v-model="item.isChecked">
@@ -49,6 +53,14 @@
                                    @keyup.13="add(cc,index,item)" v-focus="curIndex===index" @blur="cancel">
                             <button class="pull-right btn-xs btn-danger" @click="deleteCur(item)">&xotime;</button>
                         </li>
+                    </ul>
+                    <p class="text-center" v-show="showDoThingList.length<=0">你的事情都还没有完成呢。。。</p>
+                </div>
+                <div class="panel-footer">
+                    <ul class="nav nav-pills">
+                        <li role="presentation" :class="{active:curHash=='all'}"><a href="#all">全部任务</a></li>
+                        <li role="presentation" :class="{active:curHash=='finish'}"><a href="#finish">已完成</a></li>
+                        <li role="presentation" :class="{active:curHash=='unfinish'}"><a href="#unfinish">未完成</a></li>
                     </ul>
                 </div>
             </div>
@@ -79,7 +91,8 @@
             curItem: null,
             curIndex: null,
             cc: '',
-            flag: true
+            flag: true,
+            curHash: ''
         },
         directives: {
             focus(el) {
@@ -92,9 +105,28 @@
             }
         },
         created() {
+            let _this = this;
+            this.curHash = location.hash.slice(1) || 'all';
+            window.addEventListener('hashchange', function () {
+                _this.curHash = location.hash.slice(1);
+            }, false);
+
             this.list = sessionStorage._saveInfo ? JSON.parse(sessionStorage._saveInfo) : this.list;
         },
         computed: {
+            //如果是要通过计算过滤然后出的结果的数组 需要使用计算属性出来的结果来代替原数组
+            showDoThingList() {
+                if (this.curHash === 'all') {
+                    return this.list
+                }
+                if (this.curHash === 'finish') {
+                    return this.list.filter(item => item.isChecked);
+                }
+                if (this.curHash === 'unfinish') {
+                    return this.list.filter(item => !item.isChecked);
+                }
+                return this.list
+            },
             total() {
                 return this.list.filter(item => !item.isChecked).length;
             }
