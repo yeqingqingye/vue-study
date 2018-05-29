@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    父亲：{{money}}
+
+    <button @click="money=Math.floor(Math.random() * 300)">点我啊</button>
+
+    <child :m="money" @increase="add">{{msg}}</child>
+
+</div>
+
+<script type="text/javascript" defer="defer" async="async">
+
+    //父组件直接用 v-on 来监听子组件触发的事件，需跟子组件中的$emit组合使用。
+
+    //父亲向儿子传递数据 通过向儿子组件自定义属性
+    //儿子向父亲传递数据 通过向儿子组件绑定自定义一个事件来绑定父级的方法
+    //当向子组件内容中添加父级数据时 可向子组件template添加 <slot></slot>
+    //JavaScript 中对象和数组是通过引用传入的，所以对于一个数组或对象类型的 prop 来说，在子组件中改变这个对象或数组本身将会影响到父组件的状态。
+    
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            money: 800,
+            msg: '这是父组件数据'
+        },
+        methods: {
+            add(val) {
+                this.money = val;
+            },
+        },
+        components: {
+            child: {
+                props: ['m'],
+                template: '<div>儿子：{{m}} <button @click="addMoney">点我啊 </button> <slot></slot> </div>',
+                methods: {
+                    addMoney() {
+                        this.$emit('increase', Math.floor(Math.random() * 100));
+                    }
+                }
+            }
+        }
+    });
+
+
+</script>
+
+</body>
+</html>

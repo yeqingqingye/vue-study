@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <my-component>{{msg}}</my-component>
+
+</div>
+
+
+<script type="text/x-template" id="my-component-template">
+    <div>
+        <p>{{msg}}</p>
+        <slot></slot>
+    </div>
+</script>
+
+<script type="text/javascript" defer="defer" async="async">
+
+    //使用了text/x-template模板 <script> 元素中，并为其带上 text/x-template 的类型，然后通过一个 id 将模板引用过去
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            msg: '这是父组件数据'
+        },
+        components: {
+            'my-component': {
+                data() {
+                    return {
+                        msg: '这是模板数据'
+                    }
+                },
+                template: '#my-component-template'
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
