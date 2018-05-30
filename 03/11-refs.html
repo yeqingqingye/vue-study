@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <my-component ref="child"></my-component>
+</div>
+
+<script type="text/javascript">
+
+    //mounted方法：先走实例的 mounted 再走父级的 mounted
+    let myComponent = {
+        mounted() {
+            //alert(1);
+            console.log(this.$refs.p);
+        },
+        data() {
+            return {
+                msg: '我自定义组件'
+            }
+        },
+        template: '<div ref="p" class="ccc">{{msg}} <span ref="s">112345</span></div>'
+    };
+
+    let vm = new Vue({
+        el: '#app',
+        mounted() {
+            //alert(2);
+            console.log(this.$refs.child);
+        },
+        components: {
+            myComponent
+        }
+    });
+
+</script>
+
+</body>
+</html>

@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9bc4524-616c-4617-915f-d52f43cee7d0" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/03/10-babel.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03/7-子传父传递数据-2.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/03/7-子传父传递数据-3.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03/10-模态框.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/03/11-refs.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03/7-子传父传递数据.html" beforeDir="false" afterPath="$PROJECT_DIR$/03/7-子传父传递数据.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03/9-生命周期.html" beforeDir="false" afterPath="$PROJECT_DIR$/03/9-生命周期.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/03/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03/7-子传父传递数据-2.html" beforeDir="false" afterPath="$PROJECT_DIR$/03/7-子传父传递数据-2.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,30 +18,12 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="7-子传父传递数据-3.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/03/7-子传父传递数据-3.html">
+    <leaf>
+      <file leaf-file-name="11-refs.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/03/11-refs.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="7-子传父传递数据-2.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/03/7-子传父传递数据-2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="readme.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/03/readme.md">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="33" lean-forward="true" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="229">
+              <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
             </state>
           </provider>
         </entry>
@@ -95,6 +74,8 @@
         <option value="$PROJECT_DIR$/03/7-子传父传递数据-3.html" />
         <option value="$PROJECT_DIR$/03/readme.md" />
         <option value="$PROJECT_DIR$/03/7-子传父传递数据-2.html" />
+        <option value="$PROJECT_DIR$/03/10-模态框.html" />
+        <option value="$PROJECT_DIR$/03/11-refs.html" />
       </list>
     </option>
   </component>
@@ -118,7 +99,7 @@
       <path value="$PROJECT_DIR$/package.json" />
     </packageJsonPaths>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="y" value="2" />
     <option name="width" value="1379" />
@@ -138,11 +119,6 @@
             <path>
               <item name="vue-study" type="b2602c69:ProjectViewProjectNode" />
               <item name="vue-study" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="vue-study" type="b2602c69:ProjectViewProjectNode" />
-              <item name="vue-study" type="462c0819:PsiDirectoryNode" />
-              <item name="03" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -221,18 +197,19 @@
       <workItem from="1527491067796" duration="1628000" />
       <workItem from="1527493748574" duration="732000" />
       <workItem from="1527502162918" duration="1966000" />
-      <workItem from="1527556132437" duration="5816000" />
+      <workItem from="1527556132437" duration="8937000" />
+      <workItem from="1527642420484" duration="7013000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94461000" />
+    <option name="totallyTimeSpent" value="104595000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10980967" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.11054173" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
@@ -480,13 +457,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158620">
-          <caret line="7210" column="45" selection-start-line="7210" selection-start-column="45" selection-end-line="7210" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/vue/dist/vue.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -557,17 +527,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/03/7-子传父传递数据-2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="48" column="13" lean-forward="true" selection-start-line="48" selection-start-column="13" selection-end-line="48" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/03/7-子传父传递数据-3.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
+        <state relative-caret-position="53">
           <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/03/7-子传父传递数据-2.html">
+    <entry file="file://$PROJECT_DIR$/node_modules/bootstrap/dist/css/bootstrap.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="27" column="4" selection-start-line="27" selection-start-column="4" selection-end-line="27" selection-end-column="4" />
+        <state relative-caret-position="158620">
+          <caret line="7210" column="45" selection-start-line="7210" selection-start-column="45" selection-end-line="7210" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/10-模态框.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="779">
+          <caret line="121" column="22" lean-forward="true" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/03/11-refs.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="229">
+          <caret line="33" column="42" lean-forward="true" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
         </state>
       </provider>
     </entry>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .mask {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.35);
+        }
+
+        .mask-warp {
+            width: 400px;
+            height: 150px;
+            background: #ffffff;
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            border-radius: 4px;
+            margin-top: -75px;
+            margin-left: -200px;
+            opacity: 0;
+        }
+
+        .mask-warp.active {
+            animation: mask-show .4s forwards;
+        }
+
+        .mask-title, .mask-top {
+            height: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 1px solid #e1e1e1;
+        }
+
+        .mask-title {
+            height: 40%;
+        }
+
+        .mask-btn {
+            height: 40%;
+        }
+
+        .mask-btn {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .mask-btn a {
+            width: 50%;
+            text-align: center;
+        }
+
+        .mask-btn a:first-child {
+            border-right: 1px solid #e1e1e1;
+        }
+
+        @keyframes mask-show {
+            0% {
+                opacity: 0;
+                /*transform: scale(0.5, 0);*/
+                transform: scale(0, 0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="app">
+
+    <button class="btn btn-default" @click="show">点我啊</button>
+
+    <modal :show="flag" @close="flag=false" v-if="flag">
+        <div class="mask-top">{{msg}}</div>
+    </modal>
+
+</div>
+
+<template id="modal">
+    <div class="mask">
+        <div class="mask-warp" :class="{active:show}">
+            <slot></slot>
+            <div class="mask-title"><span>确定需要关闭文本框吗？</span></div>
+            <div class="mask-btn">
+                <a href="javascript:;" class="cancel">取消</a>
+                <a href="javascript:;" class="sure" @click="close">确定</a>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script type="text/javascript">
+
+    let modal = {
+        props: ['show'],
+        template: '#modal',
+        methods: {
+            close() {
+                this.$emit('close');
+            }
+        }
+    };
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            flag: false,
+            msg: '这是父级的数据'
+        },
+        methods: {
+            show() {
+                this.flag = true;
+                setTimeout(() => this.flag = false, 1500);
+            }
+        },
+        components: {
+            modal
+        }
+    });
+
+</script>
+
+
+</body>
+</html>
