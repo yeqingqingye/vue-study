@@ -39,6 +39,11 @@
         </ul>
     </div>
 
+    <div class="" v-if="cc"><span>2345</span></div>
+    <div class="" v-else><span>6789</span></div>
+
+    <button @click="cc=!cc">点我啊</button>
+
 </div>
 
 <script>
@@ -50,7 +55,8 @@
             obj: {name1: 'Y', name2: 'Q'},
             show: false,
             val: '',
-            test3Arr: [1, 2, 3, 4, 5]
+            test3Arr: [1, 2, 3, 4, 5],
+            cc: true
         },
         computed: {
             newTest3Arr() {
