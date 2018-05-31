@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <style>
+        .panel:not(:first-of-type) {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+
+    <input type="text" v-focus="{a:1,b:2}">
+
+    <panel v-for="(item,index) in list" :cur="item" :key="index">{{item.rest}}</panel>
+
+</div>
+
+<template id="panel">
+    <div class="panel panel-warning">
+        <div class="panel-heading text-center">{{cur.title}}</div>
+        <div class="panel-body text-center" @click="fn" ref="d">
+            <span>{{cur.content}}</span>
+            <slot></slot>
+        </div>
+        <div class="panel-footer text-center">{{cur.comment}}</div>
+    </div>
+</template>
+
+<script type="text/javascript">
+
+    let panel = {
+        props: ['cur'],
+        template: '#panel',
+        methods: {
+            fn() {
+                alert(this.$refs.d.textContent);
+            }
+        }
+    };
+
+    let vm = new Vue({
+        el: '#app',
+        directives: {
+            focus: {
+                inserted(el, binding) {
+                    //console.log(arguments); arguments.length=5;
+                    //第一个参数表示当前dom元素
+                    el.focus();
+                    //console.log(binding);
+                }
+            }
+        },
+        components: {
+            panel
+        },
+        data: {
+            list: [
+                {
+                    title: '这是vue的标题',
+                    content: '这是vue的内容',
+                    comment: '这是yeqing的评论',
+                    rest: 1234
+                },
+                {
+                    title: '这是react的标题',
+                    content: '这是react的内容',
+                    comment: '这是yeqing的评论',
+                    rest: 5678
+                },
+                {
+                    title: '这是angular的标题',
+                    content: '这是angular的内容',
+                    comment: '这是yeqing的评论',
+                    rest: 7890
+                }
+            ]
+        }
+    })
+
+
+</script>
+
+</body>
+</html>
