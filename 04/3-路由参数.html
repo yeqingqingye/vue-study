@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="../node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <router-link to="/article/1/a">文章1</router-link>
+    <router-link to="/article/2/b">文章2</router-link>
+    <router-link to="/article/3/c">文章3</router-link>
+    <router-view></router-view>
+</div>
+
+<script type="text/javascript">
+
+
+    let article = {
+        template: '<div>这是第{{$route.params.id?$route.params.id:1}}文章页</div>',
+        watch: {
+            $route() {  //只要路由参数变化 就会触发 此处可用于ajax获取数据
+                console.log(this.$route.params);
+            }
+        }
+    };
+
+    let routes = [
+        {
+            path: '',
+            component: article
+        },
+        {
+            path: '/article/:id/:name', //路途参数 :c表示获取的/article后面的参数
+            component: article,        //如果id是动态获取的路径参数 那表示一级路由 如果id是固定的 那表示2级路由
+        },
+    ];
+
+    let router = new VueRouter({
+        routes
+    });
+
+    let vm = new Vue({
+        el: '#app',
+        router
+    });
+
+</script>
+
+</body>
+</html>

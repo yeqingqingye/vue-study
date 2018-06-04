@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="../node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <router-link to="/home/3">首页</router-link>
+    <router-link to="/list">列表页</router-link>
+
+    <router-view></router-view>
+
+</div>
+
+<script type="text/javascript">
+
+    let home = {
+        template: '<div>这是首页 {{$route.params.id}}</div>',
+        watch: {
+            $route() {
+                console.log(this.$route.params);
+            }
+        }
+    };
+    let list = {
+        template: '<div>这是列表页 <button @click="toHome">去首页</button></div>',
+        methods: {
+            toHome() {
+                this.$router.push({name: 'home', params: {id: 1}});
+            }
+        }
+    };
+
+    let routes = [
+        {
+            path: '', redirect: '/home/66'
+        },
+        {
+            path: '/home/:id',
+            component: home,
+            name: 'home'
+        },
+        {
+            path: '/list',
+            component: list
+        }
+    ];
+
+    let router = new VueRouter({
+        routes
+    });
+
+
+    let vm = new Vue({
+        el: '#app',
+        router
+    })
+
+
+</script>
+
+</body>
+</html>

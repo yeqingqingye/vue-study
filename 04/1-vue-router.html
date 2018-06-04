@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <style>
+        .router-link-active {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app">
+
+    <router-link to="/home">首页</router-link>
+    <router-link to="/list">列表页</router-link>
+
+    <router-view>12345</router-view>
+
+</div>
+
+<script type="text/javascript">
+
+    let home = {
+        template: '<div>{{msg}} <slot></slot> </div>',
+        data() {
+            return {
+                msg: '这是首页'
+            }
+        }
+    };
+
+    let list = {
+        template: '<div>{{msg}}</div>',
+        data() {
+            return {
+                msg: '这是列表页'
+            }
+        }
+    };
+
+    //声明路由表
+    let routes = [
+        {
+            path: '/home',
+            component: home
+        },
+        {
+            path: '/list',
+            component: list
+        }
+    ];
+
+    //把路由表注入路由实例中
+    let router = new VueRouter({
+        routes
+    });
+
+    let vm = new Vue({
+        modal: 'history',
+        el: '#app',
+        router
+    });
+
+
+</script>
+
+</body>
+</html>
