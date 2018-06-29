@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <style>
+        .c-alert {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            right: 0;
+            bottom: 0;
+        }
+
+        .c-mark {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            right: 0;
+            bottom: 0;
+            background: #000000;
+            opacity: 0.6;
+        }
+
+        .c-alert-con {
+            width: 297px;
+            height: 185px;
+            background: #ffffff;
+            border-top: 3px solid #2e63c8;
+            position: fixed;
+            left: 40%;
+            top: 35%;
+            animation: _show 0.3s forwards;
+        }
+
+        .con-title {
+            font-size: 14px;
+            color: #333333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 50px;
+            margin-bottom: 50px;
+        }
+
+        @keyframes _show {
+            0% {
+                opacity: 0;
+                transform: scale(0);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .con-result {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .con-result a {
+            width: 100px;
+            height: 40px;
+            border-radius: 4px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .con-result a.cancel {
+            margin-left: 10px;
+            background: #ffffff;
+            border: 1px solid #359a3a;
+        }
+
+        .con-result a.sure {
+            background-color: #359a3a;
+            color: #ffffff;
+            margin-left: 10px;
+        }
+
+
+    </style>
+</head>
+<body>
+
+
+<div id="app">
+    <my-alert :title="title" @receive="receive" :open="open"></my-alert>
+</div>
+
+<template id="alert">
+    <div class="c-alert" v-if="show">
+        <div class="c-mark"></div>
+        <div class="c-alert-con">
+            <div class="con-title">{{title}}</div>
+            <div class="con-result">
+                <a href="javascript:;" class="cancel" @click="show=!show">取消</a>
+                <a href="javascript:;" class="sure" @click="receive">确定</a>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script type="text/javascript">
+
+
+    //父组件通过自定义属性向父组件传递数据 子组件通过props拿到这个值
+    //子组件通过通过自定义事件向父组件传递数据 父组件通过通过绑定事件来知道传了这个消息了
+
+    let myAlert = {
+        props: ['title', 'open'],
+        data() {
+            return {
+                show: true
+            }
+        },
+        template: '#alert',
+        methods: {
+            receive() {
+                this.$emit('receive', Math.floor(Math.random() * 10));
+            }
+        }
+    };
+
+    let app = new Vue({
+        el: '#app',
+        data: {
+            title: '确定批量终审操作吗',
+            open: true
+        },
+        components: {
+            'my-alert': myAlert
+        },
+        methods: {
+            receive(val) {
+                alert(val);
+            }
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

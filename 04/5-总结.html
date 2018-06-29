@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../node_modules/axios/dist/axios.js"></script>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="../node_modules/vue-router/dist/vue-router.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <div class="title">
+        <router-link to="index">首页</router-link>
+        <router-link to="home">列表</router-link>
+    </div>
+    <router-view></router-view>
+</div>
+
+
+<template id="index-1">
+    <div>
+        <div class="index" v-for="(item,index) in recommendData">
+            <img :src="item.icon" alt="">
+            <span>{{item.title}}</span>
+        </div>
+    </div>
+</template>
+
+<template id="home">
+    <div>
+        <div class="home" v-for="(item,index) in newVedios">
+            <img :src="item.icon" alt="">
+            <span>{{item.title}}</span>
+        </div>
+    </div>
+</template>
+
+<script type="text/javascript">
+
+    let index = {
+        template: '#index-1',
+        data() {
+            return {
+                recommendData: null,
+                total: null
+            }
+        },
+        created() {
+            let _this = this;
+            axios({
+                method: 'post',
+                url: '../data.json',
+                dataType: 'json',
+                data: {
+                    type: 1
+                }
+            }).then(function (data) {
+                _this.recommendData = data.data.value.recommandVedios;
+                _this.total = data.data.recommandTotal;
+            })
+        }
+    };
+
+    let home = {
+        template: '#home',
+        data() {
+            return {
+                newVedios: null,
+                total: null
+            }
+        },
+        created() {
+            let _this = this;
+            axios({
+                method: 'post',
+                url: '../data.json',
+                dataType: 'json',
+                data: {
+                    type: 2
+                }
+            }).then(function (data) {
+                _this.newVedios = data.data.value.newVedios;
+                console.log(_this.newVedios);
+                _this.total = data.data.newVedios;
+            })
+        }
+    };
+
+    let routes = [
+        {
+            path: '/index',
+            component: index,
+            name: 'index'
+        },
+        {
+            path: '/home',
+            component: home,
+            name: 'home'
+        },
+        {
+            path: '*', redirect: '/index'
+        }
+    ];
+
+    let router = new VueRouter({
+        //mode: 'history',
+        routes
+    });
+
+    let vm = new Vue({
+        el: '#app',
+        router,
+        watch: {
+            $route() {
+                console.log(this.$route.path.slice(1));
+            }
+        },
+        data: {
+            //msg: 'this is test'
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

@@ -9,6 +9,7 @@
 <body>
 
 <div id="app">
+
     <router-link to="/home/3">首页</router-link>
     <router-link to="/list">列表页</router-link>
 
@@ -26,6 +27,7 @@
             }
         }
     };
+
     let list = {
         template: '<div>这是列表页 <button @click="toHome">去首页</button></div>',
         methods: {
@@ -58,7 +60,7 @@
     let vm = new Vue({
         el: '#app',
         router
-    })
+    });
 
 
 </script>

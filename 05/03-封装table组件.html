@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <my-table :tr-Data="trData"></my-table>
+</div>
+
+<template id="table">
+    <div class="">
+        {{trData}}
+        <table class="table table-bordered">
+            <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" class="js_all_choose" v-model="allVal">
+                </th>
+                <th>统计名称</th>
+                <th>账单状态</th>
+                <th>问题总数</th>
+                <th>优秀数</th>
+                <th>审核未通过</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="(item,index) in trData" :data-id="index">
+                <td>
+                    <input type="checkbox" v-model="item.isChecked" :value="item.id">
+                </td>
+                <td class="td-blue">{{item.name}}</td>
+                <td>{{item.a1}}</td>
+                <td class="td-blue">{{item.a2}}</td>
+                <td class="">{{item.a3}}</td>
+                <td class="td-blue">{{item.a4}}</td>
+                <td class="choose">
+                    <a href="javascript:;" class="js_every" title="" @click="add(item.id,item.isChecked)">明细</a>&nbsp;
+                    <a href="javascript:;" class="js_settle" title="">结算</a>&nbsp;
+                    <a href="javascript:;" class="js_bill-opening" title="">账单开放</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</template>
+
+<script type="text/javascript">
+
+    //table组件
+    let myTable = {
+        props: ['trData'],
+        data() {
+            return {}
+        },
+        template: '#table',
+        computed: {
+            allVal: {
+                get() {
+                    return this.trData.every((item, index) => item.isChecked);
+                },
+                set(val) {
+                    this.trData.map((item, index) => item.isChecked = val);
+                }
+            }
+        }
+    };
+
+    let app = new Vue({
+        el: '#app',
+        data: {
+            trData: [
+                {
+                    isChecked: true,
+                    name: '2018/05',
+                    a1: '待结算',
+                    a2: 1,
+                    a3: 2,
+                    a4: 3,
+                    id: 1
+                },
+                {
+                    name: '3018/05',
+                    a1: '已结算',
+                    a2: 4,
+                    a3: 5,
+                    a4: 6,
+                    id: 2,
+                    isChecked: true,
+                },
+                {
+                    name: '11018/05',
+                    a1: '小泽玛利亚',
+                    a2: 4,
+                    a3: 5,
+                    a4: 6,
+                    id: 3,
+                    isChecked: false,
+                }
+            ],
+        },
+        components: {
+            'my-table': myTable
+        }
+    });
+
+</script>
+
+
+</body>
+</html>

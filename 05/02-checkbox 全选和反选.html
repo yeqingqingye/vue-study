@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <input type="checkbox" v-model="all">
+
+    <br/>
+
+    <input type="checkbox" v-model="item.isChecked" v-for="item in list">
+
+</div>
+
+<script type="text/javascript">
+
+    let app = new Vue({
+        el: '#app',
+        data: {
+            list: [{isChecked: false}, {isChecked: true}, {isChecked: true}]
+        },
+        computed: {
+            all: {
+                get() {
+                    return this.list.every((item, index) => item.isChecked)
+                },
+                set(val) {
+                    this.list.forEach((item, index) => item.isChecked = val);
+                }
+            }
+        }
+    });
+
+
+    let arr = [1, 2, 3, 4];
+    let newArr = arr.map(function (item, index) {        //对原数组没影响6
+        return item * 2
+    });
+
+    arr.forEach(function (item, index) {
+        return item.isChecked = false;
+    });
+
+    console.log(newArr, arr);
+
+</script>
+
+
+</body>
+</html>
