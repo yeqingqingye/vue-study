@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app" class="container" v-cloak>
+    <div class="row">
+        <ul class="nav nav-pills">
+            <li :class="{active:index==curIndex,disabled:index==nav.length-1,}" v-for="(value,index) in nav"
+                @click="changeTab(index)">
+                <a href="#">{{value}}</a>
+            </li>
+        </ul>
+    </div>
+    <div class="row">
+
+        <table class="table table-bordered table1" v-if="curIndex===0">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>yeqing</td>
+                <td>23</td>
+                <td>男</td>
+                <td><a href="javascript:;">点击</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table2" v-else-if="curIndex===1">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>yeqing1</td>
+                <td>231</td>
+                <td>男1</td>
+                <td><a href="javascript:;">点击</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <table class="table table-bordered table3" v-else-if="curIndex===2">
+            <thead>
+            <tr>
+                <th>姓名</th>
+                <th>年龄</th>
+                <th>性别</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>yeqing3</td>
+                <td>233</td>
+                <td>男3</td>
+                <td><a href="javascript:;">点击</a></td>
+            </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="alert alert-success" role="alert">...</div>
+
+</div>
+
+<script type="text/javascript">
+
+    let app = new Vue({
+        el: '#app',
+        data: {
+            nav: ['Home', 'Profile', 'Messages', 'yeqing'],
+            curIndex: 0
+        },
+        methods: {
+            changeTab(index) {
+                if (index === this.nav.length - 1) return;
+                this.curIndex = index;
+            }
+        },
+        created() {
+            //this.curIndex = 1;
+        }
+    });
+
+</script>
+
+</body>
+</html>

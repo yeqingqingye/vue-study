@@ -1,0 +1,33 @@
+@charset "utf-8";
+.body-top, .body-list {
+    padding-left: 50px;
+    height: 48px;
+    line-height: 48px;
+}
+
+.body-top li {
+    font-size: 14px;
+    float: left;
+    font-weight: 700;
+    margin-right: 30px;
+}
+
+.empty-box {
+    z-index: 0;
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+    color: #AFB5C1;
+    line-height: 32px;
+}
+
+.empty-box .icon {
+    width: 200px;
+    height: 160px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.icon-nofile {
+    background-image: url(../img/icon-nofile.svg);
+}

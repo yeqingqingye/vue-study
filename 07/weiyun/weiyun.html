@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.css">-->
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="./weiyun.css">
+    <script type="text/javascript" src="../../node_modules/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="../../node_modules/vue-router/dist/vue-router.js"></script>
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div id="app" class="container" v-cloak>
+
+    <!--左边侧边栏-->
+    <div class="aside">
+        <h1 class="header">
+            <a href="javascript:;">{{appName}}</a>
+        </h1>
+        <ul class="menu-list">
+            <li :class="{cur: showType=='all'}" @click="changeShowType('all')">
+                <router-link to="/all">
+                    <i class="icon icon-all"></i>
+                    <span>全部</span>
+                </router-link>
+            </li>
+            <li :class="{cur: showType=='doc'}" @click="changeShowType('doc')">
+                <router-link to="/doc">
+                    <i class="icon icon-doc"></i>
+                    <span>文档</span>
+                </router-link>
+            </li>
+            <li :class="{cur: showType=='pic'}" @click="changeShowType('pic')">
+                <router-link to="/photo">
+                    <i class="icon icon-pic"></i>
+                    <span>图片</span>
+                </router-link>
+            </li>
+            <li :class="{cur: showType=='video'}" @click="changeShowType('video')">
+                <router-link to="/video">
+                    <i class="icon icon-video"></i>
+                    <span>视频</span>
+                </router-link>
+            </li>
+            <li :class="{cur: showType=='music'}" @click="changeShowType('music')">
+                <router-link to="/music">
+                    <i class="icon icon-music"></i>
+                    <span>音乐</span>
+                </router-link>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main">
+
+        <!--顶部工具栏-->
+        <div class="toolbar">
+
+            <div class="layout clearfix">
+
+                <div class="action-wrap action-wrap-upload">
+                    <div class="action-item">
+                        <i class="icon icon-upload-s"></i>
+                        <span class="act-txt">上传</span>
+                        <input type="file" name="file" @change="getFile">
+                    </div>
+                </div>
+
+                <div class="action-wrap">
+                    <div class="action-item">
+                        <i class="icon icon-add"></i>
+                        <span class="act-txt">新建</span>
+                    </div>
+                </div>
+
+                <div class="action-wrap">
+                    <div class="action-item">
+                        <i class="icon icon-trash"></i>
+                        <span class="act-txt">删除</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!--主体内容-->
+            <div class="main-body">
+
+                <router-view></router-view>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<template id="all">
+
+    <div class="main-body-all">
+        <div class="body-top">
+            <ul>
+                <li>全部</li>
+            </ul>
+        </div>
+        <div class="body-list">
+            <ul>
+
+            </ul>
+            <div class="empty-box">
+                <div class="status-inner">
+                    <i class="icon icon-nofile"></i>
+                    <h2 class="title">暂无文件</h2>
+                    <p class="txt">请点击左上角的“上传”按钮添加</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<template id="doc">
+    <div class="main-body-doc">
+        <div class="body-top">
+            <ul>
+                <li>全部文档</li>
+                <li>DOC</li>
+                <li>XLS</li>
+                <li>PPT</li>
+                <li>PPT</li>
+                <li>PDF</li>
+            </ul>
+        </div>
+        <div class="body-list">
+            <ul>
+
+            </ul>
+            <div class="empty-box">
+                <div class="status-inner">
+                    <i class="icon icon-nofile"></i>
+                    <h2 class="title">暂无文档</h2>
+                    <p class="txt">请点击左上角的“上传”按钮添加</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<template id="photo">
+
+    <div class="main-body-photo">
+        <div class="body-top">
+            <ul>
+                <li>全部图片</li>
+            </ul>
+        </div>
+        <div class="body-list">
+            <ul>
+
+            </ul>
+            <div class="empty-box">
+                <div class="status-inner">
+                    <i class="icon icon-nofile"></i>
+                    <h2 class="title">暂无图片</h2>
+                    <p class="txt">请点击左上角的“上传”按钮添加</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<template id="video">
+
+    <div class="main-body-video">
+        <div class="body-top">
+            <ul>
+                <li>视频</li>
+            </ul>
+        </div>
+        <div class="body-list">
+            <ul>
+
+            </ul>
+            <div class="empty-box">
+                <div class="status-inner">
+                    <i class="icon icon-nofile"></i>
+                    <h2 class="title">暂无视频</h2>
+                    <p class="txt">请点击左上角的“上传”按钮添加</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+<template id="music">
+    <div class="main-body-music">
+        <div class="body-top">
+            <ul>
+                <li>音乐</li>
+            </ul>
+        </div>
+        <div class="body-list">
+            <ul>
+
+            </ul>
+            <div class="empty-box">
+                <div class="status-inner">
+                    <i class="icon icon-nofile"></i>
+                    <h2 class="title">暂无音乐</h2>
+                    <p class="txt">请点击左上角的“上传”按钮添加</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script type="text/javascript" src="./weiyun.js"></script>
+
+</body>
+</html>

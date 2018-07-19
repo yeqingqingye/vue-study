@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .content {
+            background-color: antiquewhite;
+            width: 200px;
+            height: 30px;
+            overflow: hidden; /*水平隐藏*/
+            white-space: nowrap; /*竖直隐藏*/
+            text-overflow: ellipsis; /*省略号*/
+            cursor: default;
+        }
+    </style>
+    <script>
+        onload = function () {
+            /*content.onmouseover = function(){
+                this.title = this.innerHTML;
+            }*/
+        }
+        var isoutHide, isoutHide1;
+
+        function overShow(self, e) {
+
+            //console.log('overShow',e)
+            //isoutHide = false
+            var x = self.getBoundingClientRect().x + self.getBoundingClientRect().width / 2
+            var y = self.getBoundingClientRect().y + self.getBoundingClientRect().height / 2
+
+            var showDiv = document.getElementById('showDiv');
+            console.log(showDiv.style.display)
+            if (showDiv.style.display != 'block') {
+                //var theEvent = window.event|| e;
+                //showDiv.style.left = theEvent.clientX-20+"px";
+                //showDiv.style.top = theEvent.clientY+"px";
+                showDiv.style.left = x + 'px';
+                showDiv.style.top = y + 'px';
+                showDiv.style.display = 'block';
+                //alert(self.innerHTML);
+                showDiv.innerHTML = self.innerHTML;
+            }
+        }
+
+        /*function outHide() {
+            console.log('outHide')
+            isoutHide = true
+            if (isoutHide1) {
+                var showDiv = document.getElementById('showDiv');
+                showDiv.style.display = 'none';
+                showDiv.innerHTML = '';
+            }
+        }*/
+
+
+        /* function overShow1() {
+             console.log('overShow1');
+             //overShow = null;
+             isoutHide1 = false
+         }*/
+
+
+        function outHide1(self) {
+            console.log(2)
+            console.log('outHide1')
+            isoutHide1 = true
+            self.style.display = 'none'
+            self.innerHTML = '';
+            if (isoutHide) {
+                self.style.display = 'none'
+                self.innerHTML = '';
+            }
+        }
+
+        function outHide2(e) {
+            var showDiv = document.getElementById('showDiv');
+            if (showDiv.style.display = 'block') {
+                showDiv.style.display = 'none'
+            }
+        }
+
+
+    </script>
+</head>
+<body>
+
+<div class="content" onmouseenter="overShow(this,event)">
+    js0 文字超出长度用省略号代替,鼠标悬停并以悬浮框显示
+    js0 文字超出长度用省略号代替,鼠标悬停并以悬浮框显示
+    js0 文字超出长度用省略号代替,鼠标悬停并以悬浮框显示
+    js0 文字超出长度用省略号代替,鼠标悬停并以悬浮框显示
+
+    <div id="showDiv" style="position: absolute; background-color: white; border: 1px solid black;z-index: 1"
+         onmouseenter="overShow(this,event)">
+    </div>
+
+</div>
+
+
+</body>
+</html>

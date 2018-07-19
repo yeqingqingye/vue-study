@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <input type="text" :value="val" @input="changeVal">
+
+</div>
+
+<script type="text/javascript">
+
+    let app = new Vue({
+        el: '#app',
+        data: {
+            inputNum: 10086,
+            val: 10001
+        },
+        methods: {
+            changeVal(e) {
+                console.log(e.target.value.replace(/[^\d]/g, ''));
+                //this.val=e.target.value.replace(/[^\d]/g,'');            //这种方法不可行
+                e.target.value = e.target.value.replace(/[^\d]/g, '');     //只有这种方法可行
+            }
+        },
+        computed: {
+            /*inputVal: {
+                get() {
+                    return this.inputNum
+                },
+                set(newVal) {
+                    this.inputNum = newVal.replace(/[\d+]/g, '');     //计算属性只能改一次
+                }
+            }*/
+        }
+    });
+
+
+</script>
+
+</body>
+</html>
