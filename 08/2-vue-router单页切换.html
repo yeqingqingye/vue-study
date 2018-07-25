@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <script type="text/javascript" src="../node_modules/axios/dist/axios.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <div class="container">
+
+        <!--<ul class="nav nav-pills">
+              <li :class="{active:tab=='eat'}" @click="changeTab('eat')">
+                  <router-link to="/dinner">吃饭</router-link>
+              </li>
+          </ul>-->
+
+        {{$route.params.id}}
+
+        <div class="">
+            <router-view></router-view>
+        </div>
+
+    </div>
+</div>
+
+<template id="dinner">
+    <div>
+        <span v-for="(item,index) in arr">{{item.desc}}</span>
+        {{$route.params.id}}
+    </div>
+</template>
+
+<script type="text/javascript">
+
+    let dinner = {
+        template: '#dinner',
+        data() {
+            return {
+                arr: []
+            }
+        },
+        methods: {
+            getData() {
+                axios({
+                    method: 'get',             //请求类型是method不是get
+                    url: '../tab.json',
+                    dataType: 'json',
+                    params: {a: 1}           //如果请求类型是get请求 则参数是params 如果请求类型是post 则参数是data
+                }).then((res) => {
+                    this.arr = res.data.data.filter((item, index) => {
+                        return item.id === 1
+                    });
+                })
+            }
+        },
+        created() {
+            this.getData();
+        }
+    };
+
+    let routes = [
+        {
+            path: '/:id',
+            component: dinner,
+        }
+    ];
+
+    let router = new VueRouter({
+        routes
+    });
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            tab: 'eat'
+        },
+        router,
+        methods: {
+            changeTab(val) {
+                this.tab = val;
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>

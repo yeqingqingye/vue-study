@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="../node_modules/vue/dist/vue.js"></script>
+    <script type="text/javascript" src="../node_modules/vue-router/dist/vue-router.js"></script>
+    <script type="text/javascript" src="../node_modules/axios/dist/axios.js"></script>
+</head>
+<body>
+
+<div id="app">
+
+    <div class="container">
+
+        <ul class="nav nav-pills">
+            <li :class="{active:tab=='eat'}" @click="changeTab('eat')">
+                <router-link to="/dinner">吃饭</router-link>
+            </li>
+            <li :class="{active:tab=='sleep'}" @click="changeTab('sleep')">
+                <router-link to="/sleep">睡觉</router-link>
+            </li>
+            <li :class="{active:tab=='game'}" @click="changeTab('game')">
+                <router-link to="/game">打游戏</router-link>
+            </li>
+        </ul>
+
+        <div class="">
+            <router-view></router-view>
+        </div>
+
+        <button @click="clickMe">点我啊</button>
+
+
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    let dinner = {
+        template: '<div><span v-for="(item,index) in arr">{{item.desc}}</span></div>',
+        data() {
+            return {
+                arr: []
+            }
+        },
+        methods: {
+            getData() {
+                axios({
+                    method: 'get',             //请求类型是method不是get
+                    url: '../tab.json',
+                    dataType: 'json',
+                    params: {a: 1}           //如果请求类型是get请求 则参数是params 如果请求类型是post 则参数是data
+                }).then((res) => {
+                    this.arr = res.data.data.filter((item, index) => {
+                        return item.id === 1
+                    });
+                })
+            }
+        },
+        created() {
+            this.getData();
+        }
+    };
+
+    let sleep = {
+        template: '<div><span v-for="(item,index) in arr">{{item.desc}}</span></div>',
+        data() {
+            return {
+                arr: []
+            }
+        },
+        methods: {
+            getData() {
+                axios({
+                    method: 'get',             //请求类型是method不是get
+                    url: '../tab.json',
+                    dataType: 'json',
+                    params: {a: 2}           //如果请求类型是get请求 则参数是params 如果请求类型是post 则参数是data
+                }).then((res) => {
+                    this.arr = res.data.data.filter((item, index) => {
+                        return item.id === 2
+                    });
+                })
+            }
+        },
+        created() {
+            this.getData();
+        }
+    };
+
+    let game = {
+        template: '<div><span v-for="(item,index) in arr">{{item.desc}}</span></div>',
+        data() {
+            return {
+                arr: []
+            }
+        },
+        methods: {
+            getData() {
+                axios({
+                    method: 'get',             //请求类型是method不是get
+                    url: '../tab.json',
+                    dataType: 'json',
+                    params: {a: 3}           //如果请求类型是get请求 则参数是params 如果请求类型是post 则参数是data
+                }).then((res) => {
+                    this.arr = res.data.data.filter((item, index) => {
+                        return item.id === 3
+                    });
+                })
+            }
+        },
+        created() {
+            this.getData();
+        }
+    };
+
+    let routes = [
+        {
+            path: '/dinner',
+            component: dinner
+        },
+        {
+            path: '/sleep',
+            component: sleep
+        },
+        {
+            path: '/game',
+            component: game
+        },
+        {
+            path: '',
+            redirect: '/dinner'
+        }
+    ];
+
+    let router = new VueRouter({
+        routes
+    });
+
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            tab: 'eat'
+        },
+        router,
+        created() {
+            console.log(1);
+        },
+        methods: {
+            changeTab(val) {
+                this.tab = val;
+            },
+            clickMe() {
+                location.href = `./2-vue-router单页切换.html#/${Math.floor(Math.random() * 100)}`;
+            }
+        }
+    });
+
+</script>
+
+<script type="text/javascript">
+
+    function hashChange() {
+
+        let str = window.location.hash;        //window.location.hash  获取hash值
+
+        let obj = {};
+
+        let paramsArr = str.replace(/#/g, '').split(/\//g).filter(function (item, index) {
+            return item
+        });
+
+        for (let i = 0; i < paramsArr.length; i++) {
+            obj[i] = paramsArr[i];
+        }
+
+        return obj
+    }
+
+    console.log(hashChange());
+
+</script>
+
+</body>
+</html>
